@@ -94,7 +94,7 @@ a{
 
 }
 .about-text{
-    background-color: rgba(177, 178, 185, 0);
+    background-color: #a3dcf7;
     border: 1px solid black;
     border-radius: 12px;
     box-shadow: 8px 8px 4px 4px rgba(0, 0, 0, 0.4);
@@ -227,6 +227,18 @@ a{
     justify-content: center;
 }
 
+.faq-section video{
+    position: absolute;
+    object-fit: cover;
+    z-index: -10; /* Menempatkan video di belakang konten FAQ */
+    width: 100%;
+    height: 100%;
+    opacity: 0.25; /* Membuat video lebih transparan agar teks FAQ tetap terbaca */
+    object-position: center; /* Memastikan video tetap fokus di tengah saat dipotong */
+    overflow: hidden; /* Memotong bagian video yang keluar dari area FAQ */
+
+}
+
 .faq-container {
     max-width: 768px; /* Membatasi lebar maksimum agar terlihat seperti list di tengah */
     width: 100%;
@@ -345,6 +357,191 @@ details[open].faq-item {
     font-size: 15px;
     line-height: 1.6; /* Jarak antar baris agar nyaman dibaca */
 }
+
+/* =========================================
+   Styling Teks (Header Area)
+========================================= */
+.fasilitas-section {
+    padding: 80px 0; /* Padding kiri-kanan 0 agar marquee bisa menyentuh ujung layar */
+    overflow: hidden; 
+}
+
+.contain {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.overline-facility {
+    color: #0284c7;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.heading-facility {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+}
+
+.subheading-facility {
+    font-size: 18px;
+    color: #475569;
+    margin-bottom: 50px;
+}
+
+/* =========================================
+   Animasi Marquee 
+========================================= */
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden; /* Memotong elemen yang keluar dari layar */
+    position: relative;
+    /* Tambahan efek blur (gradient) di ujung kiri & kanan agar animasi terlihat halus saat muncul/hilang */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content; /* Track memanjang sejauh isi konten di dalamnya */
+    /* Menjalankan animasi ke Kanan (scrollRight), durasi 20 detik, kecepatan konstan (linear), berulang terus (infinite) */
+    animation: scrollRight 25s linear infinite;
+}
+
+/* === MEMBERHENTIKAN ANIMASI SAAT DI-HOVER === */
+.marquee-track:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+.marquee-group {
+    display: flex;
+    gap: 20px; /* Jarak antar kotak fasilitas */
+    padding-right: 20px; /* Penting agar jarak antara kelompok 1 dan 2 konsisten */
+    padding-top: 20px;
+}
+
+/* Keyframes untuk Bergerak ke Kanan */
+@keyframes scrollRight {
+    /* Mulai dari posisi -50% (bergeser ke kiri menutupi kelompok 1) */
+    0% {
+        transform: translateX(-50%);
+    }
+    /* Bergerak secara bertahap menuju posisi 0% (kembali ke titik awal/kanan) */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.fasilitas-card {
+    position: relative;
+    width: 250px; /* Kotak sedikit lebih lebar dari jurusan */
+    height: 180px;
+    background-color: #ffffff;
+    border: 2px solid #bae6fd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Sedikit efek naik ke atas saat di-hover pada gambar individunya */
+.fasilitas-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+.fasilitas-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-label-fasilitas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50px; /* Menyeragamkan tinggi area hitam agar sama rata untuk teks 1 atau 2 baris */
+    background: rgba(15, 23, 42, 0.85); 
+    color: #ffffff;
+    font-size: 13px; /* Ukuran font disesuaikan sedikit agar teks panjang lebih pas */
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    
+    /* Kombinasi Flexbox untuk posisi tengah yang presisi */
+    display: flex;
+    justify-content: center; /* Rata tengah horizontal */
+    align-items: center;     /* Rata tengah vertikal */
+    text-align: center;      /* Memastikan teks yang turun baris tetap rata tengah */
+    line-height: 1.3;        /* Memberi sedikit jarak jika teks turun baris agar tidak berdempetan */
+}
+
+/* =======CTA Section======*/
+.cta-section{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    background-color: #cecfd6;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    gap: 20px;
+}
+.ppdb{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    gap: 20px;
+}
+/* =======Footer====== */
+/* Mengatur container utama footer */
+.site-footer {
+  background-color: #2b4c8c; /* Sesuaikan dengan warna biru footer kamu */
+  display: flex;
+  justify-content: space-between; /* Dorong bagian kiri ke ujung kiri, kanan ke ujung kanan */
+  align-items: center; /* Membuat semua elemen sejajar lurus secara vertikal */
+  padding: 15px 30px; /* Memberi ruang/jarak di dalam footer agar tidak mepet ke tepi */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Mengatur bagian kiri (Logo + Teks berdampingan) */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Memberikan jarak horizontal antara logo dan teks */
+}
+
+/* Mengatur ukuran logo */
+.footer-logo {
+  height: 50px; /* Atur tinggi logo agar seragam */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Mengatur semua teks di dalam footer agar mudah dibaca */
+.footer-text {
+  color: #ffffff; /* Mengubah warna teks menjadi putih agar kontras */
+  font-family: sans-serif; /* Opsional: ganti font agar lebih modern */
+  font-size: 14px;
+  margin: 0; /* Menghilangkan margin bawaan tag <p> */
+}
+
+/* Opsional: Membuat footer responsif di layar HP */
+
+
 @media (max-width: 768px) {
    /* Memperlebar judul dan sedikit mengecilkan ukuran font */
     .Judul {
@@ -376,4 +573,25 @@ details[open].faq-item {
     .button {
         width: 200px; 
     }
-}
+    .cta-section{
+        flex-direction: column;
+    }
+    .contact h1{
+        text-align: center;
+    }
+    .site-footer {
+    flex-direction: column; /* Ubah susunan menjadi ke bawah jika dibuka di HP */
+    gap: 10px;
+    text-align: center;
+  }
+  .footer-left {
+    flex-direction: column; /* Logo dan teks hak cipta bertumpuk di HP */
+    gap: 5px;
+  }
+  .ppdb h1{
+        text-align: center;
+
+    }
+    }
+    
+
