@@ -65,44 +65,76 @@ a{
     text-decoration: none;
 }
 
- 
-
-.video-wrapper video {
-    width: 80%; /* Membuat video responsif mengikuti lebar wrapper */
-    display: block; /* Menghilangkan spasi kosong di bawah elemen inline */
-    border-radius: 12px; /* Membuat ujung video melengkung (seperti di foto) */
-    margin: 30px;
-    
-    /* Membuat efek bayangan tebal jatuh ke kanan bawah.
-       Format: offset-X | offset-Y | blur-radius | warna 
-    */
-    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.25); 
+ /* =======About Section====== */
+ .about-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 64px;
+    box-sizing: border-box;
 }
- #about{
+
+.content-box-about{
+    gap: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap:50px;
- }
-
-
-.about-text p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-
-}
-.about-text{
-    background-color: #a3dcf7;
-    border: 1px solid black;
-    border-radius: 12px;
-    box-shadow: 8px 8px 4px 4px rgba(0, 0, 0, 0.4);
-    width: 30%;
     height: auto;
-    padding : 10px;
-    backdrop-filter: blur(6px);
+    width: max-content;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 2px 2px grey;
+    background-color: rgba(135, 207, 235, 0.555);
+
+
 }
+.left-content{
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.video-wrapper{
+    height: auto;
+    width: auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+}
+#video-percik{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    object-position: center;
+}
+
+.right-content{
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    text-align: left;
+    align-items: center;
+    justify-content: flex-start
+    
+}
+.right-content h1{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.right-content p{
+    font-size: 16px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;}
+
+
+
 /* =========================================
    Styling Section & Layout Container
 ========================================= */
@@ -549,27 +581,34 @@ details[open].faq-item {
         font-size: 24px;
         padding: 10px;
     }
-
-    /* Mengubah flex-direction menjadi column agar konten menumpuk ke bawah */
-    #about {
+    .about-section{
+        padding: 12px;
+    }
+    .content-box-about{
         flex-direction: column;
-        gap: 20px; /* Mengurangi jarak antar elemen agar tidak terlalu jauh di mobile */
+        width: 100%;
+        height: auto;
+        padding: 6px;
     }
-
-    /* Memperlebar kotak teks about agar tidak terlalu sempit di layar kecil */
-    .about-text {
-        width: 90%; 
-        box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.4); /* Sedikit memperhalus shadow */
+    .video-wrapper{
+        margin-left: 10px;
+        margin-right: 10px;
     }
-
-    /* Mengurangi margin pada video dan memperlebar sedikit */
-    .video-wrapper video {
-        width: 95%;
-        margin: 15px auto;
-        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.25); /* Menyesuaikan proporsi bayangan */
+    .left-content, .right-content{
+        width: 100%;
+        height: auto;
     }
+    .right-content h2{
+        font-size: 20px;
+        text-align: center;
+    }
+    .right-content p{
+        font-size: 14px;
+        text-align: justify;
     
-    /* (Opsional) Memperlebar tombol sedikit agar lebih mudah di tap di layar sentuh */
+    }
+
+
     .button {
         width: 200px; 
     }

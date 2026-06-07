@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SMK Perguruan Cikini KIIC</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="animation.css">
+        <script src="index.js" defer></script>
     </head>
     <body>
         <section>
-            <div class="landing-page">
+            <div class="landing-page fade fadeIn">
                
                     <div class="Judul">
                         <h1><strong>SMK Perguruan Cikini KIIC Karawang</strong></h1>
@@ -20,27 +22,28 @@
             </div>
         </section>
         <!-- About Us Section -->
-         <div style="text-align: center; align-items: center; height: 45px; width:30%; background-color: #ade6f7; margin:0 auto; border: 1px solid black; border-radius: 30px; backdrop-filter: blur(10px);">
-            <h1 style="font-size: 22px;"><strong>About Us</strong></h1>
-
-         </div>
-
-        <section id="about">
-            <div class="video-wrapper">
-                <video src="video-percik.mp4" controls playsinline>
-                    Browser Anda tidak mendukung tag video.
-                </video>
+    <section class="about-section">
+        <div class="content-box-about fade fadeIn" >
+            <div class="left-content">
+                <div class="video-wrapper">
+                    <video src="video-percik.mp4" id="video-percik" controls>
+                        Browser Anda tidak mendukung tag video.
+                    </video>
+                </div>
             </div>
-            <div class="about-text">
-                <p>SMK Perguruan Cikini - KIIC Karawang adalah sekolah menengah kejuruan di bawah naungan Perguruan Cikini Jakarta
-                     yang berkolaborasi langsung dengan Karawang International Industrial City (KIIC). Berdiri di atas lahan seluas 4 hektar, 
-                     kampus kami memiliki fasilitas lengkap yang mencakup gedung manajemen, ruang kelas teori, serta laboratorium 
-                     modern. Kami berkomitmen menghadirkan pengalaman belajar terbaik untuk mencetak lulusan berkualitas yang siap bersaing di dunia industri maupun perguruan tinggi</p>
-            </div>
-        </section>
+            <aside class="right-content">
+                <h2>Selamat datang di Website Kami</h2>
+                <p>SMK Perguruan Cikini - KIIC Karawang adalah institusi pendidikan kejuruan unggulan di bawah naungan Perguruan Cikini Jakarta.
+                     Berdiri di atas lahan seluas 4 hektar hasil kerja sama dengan pengelola kawasan industri KIIC, kami berkomitmen mencetak 
+                     lulusan berkualitas yang siap bersaing dan memenuhi kebutuhan tenaga kerja di dunia industri. Didukung fasilitas yang 
+                     komprehensif—meliputi gedung manajemen, ruang belajar teori, serta workshop dan laboratorium terpadu—kami menghad
+                     irkan ekosistem pembelajaran yang optimal.</p>
+            </aside>
+        </div>
+    </section>
         <!-- Programs Section -->
         <section class="jurusan-section">
-        <div class="container">
+        <div class="container fade fadeIn" >
             
             <h4 class="overline">PROGRAM KEAHLIAN</h4>
             <h2 class="heading">Jurusan Kami</h2>
