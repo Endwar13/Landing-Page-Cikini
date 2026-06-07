@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .landing-page{
     width: 100%;
     height: 100vh;
@@ -12,6 +16,7 @@ body{
     margin: 0%;
     background-color: #f0f8ff; /* Warna biru muda (AliceBlue) sebagai tema utama */
     color: #0f172a;
+    width: 100vw;
 }
 .Judul{
     margin: 0 auto;
@@ -70,9 +75,9 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: auto;
-    padding: 64px;
+    padding: 32px;
     box-sizing: border-box;
 }
 
