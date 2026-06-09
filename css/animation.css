@@ -1,16 +1,15 @@
 /* 1. Keadaan awal (Transparan) */
         .fade {
             opacity: 0;
-            /* Durasi animasi dibuat 1.5 detik agar lebih elegan */
-            transition: opacity 1.5s ease-in; 
+            transition: 1.0s ease-in; 
             
-            /* Bebas ubah styling di bawah ini sesuai desain Anda */
             font-family: Arial, sans-serif;
             line-height: 1.6;
             padding: 20px;
+            transform: translateY(50px);
         }
 
-        /* 2. Keadaan akhir (Muncul sepenuhnya) */
         .tampil {
             opacity: 1;
+            transform: translateY(0);
         }
